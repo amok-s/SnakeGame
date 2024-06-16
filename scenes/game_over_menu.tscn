@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5jhgr735r7gk"]
+
+[ext_resource type="FontFile" uid="uid://bhmu68lrkc5s" path="res://assets/Jersey10-Regular.ttf" id="1_e8adi"]
+[ext_resource type="Script" path="res://scenes/game_over_menu.gd" id="1_r1bbo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16rit"]
+bg_color = Color(0.882353, 0.435294, 0.721569, 1)
+shadow_size = 5
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whsrl"]
+bg_color = Color(0.470588, 0.219608, 0.556863, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.584314, 0.243137, 0.788235, 1)
+shadow_offset = Vector2(1, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvstr"]
+bg_color = Color(0.470588, 0.219608, 0.556863, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7q5bt"]
+bg_color = Color(0.517647, 0.25098, 0.607843, 1)
+
+[node name="GameOverMenu" type="CanvasLayer"]
+script = ExtResource("1_r1bbo")
+
+[node name="GameOverPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -125.0
+offset_right = 200.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_16rit")
+
+[node name="ResultLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.5
+offset_top = -86.0
+offset_right = 132.5
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_e8adi")
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = 22.0
+offset_right = 92.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.168627, 0.168627, 0.168627, 1)
+theme_override_fonts/font = ExtResource("1_e8adi")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_whsrl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fvstr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7q5bt")
+text = "RESTART"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

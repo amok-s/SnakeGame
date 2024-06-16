@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr0bsial5vtwu"]
+
+[ext_resource type="FontFile" uid="uid://bhmu68lrkc5s" path="res://assets/Jersey10-Regular.ttf" id="1_14nsw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mpmy"]
+bg_color = Color(0.882353, 0.435294, 0.721569, 1)
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="ScorePanel" type="Panel" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1mpmy")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_top = -6.0
+offset_right = 65.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_14nsw")
+theme_override_font_sizes/font_size = 42
+text = "SCORE: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
